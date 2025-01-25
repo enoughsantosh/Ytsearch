@@ -15,7 +15,8 @@ def youtube_search(query):
         return [
             {
                 "title": video['title'],
-                "url": video['url'],
+                "channel": video.get('channel', 'Unknown'),  # Extract channel name
+                "video_id": video['id'],                    # Extract video ID
                 "thumbnail": f"https://img.youtube.com/vi/{video['id']}/hqdefault.jpg"
             }
             for video in results
