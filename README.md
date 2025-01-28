@@ -1,8 +1,4 @@
 
-
-
----
-
 YouTube Search API
 
 A lightweight API built with Python and yt-dlp to perform YouTube searches. The API fetches search results based on a query string and returns relevant video details like titles, channels, thumbnails, and video IDs. Deployed on Vercel for scalability and ease of use.
