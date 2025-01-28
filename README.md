@@ -1,3 +1,7 @@
+Here’s the README file for a YouTube Search API using Python and yt-dlp, deployed on Vercel. This service allows users to query YouTube search results and returns a JSON response with video details.
+
+
+---
 
 YouTube Search API
 
@@ -146,4 +150,3 @@ This project is not affiliated with YouTube or Google. Use this tool responsibly
 ---
 
 Let me know if you need help with code snippets or additional details!
-
