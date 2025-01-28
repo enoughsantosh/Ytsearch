@@ -1,43 +1,42 @@
-Here’s the README file for a YouTube Search API using Python and yt-dlp, deployed on Vercel. This service allows users to query YouTube search results and returns a JSON response with video details.
+# YouTube Search API
 
+A lightweight API built with Python and yt-dlp to perform YouTube searches. This service allows users to query YouTube search results and returns structured JSON responses with comprehensive video details. Deployed on Vercel for scalable, serverless operations.
 
----
+## 🌟 Features
 
-YouTube Search API
+- **Powerful Search**: Retrieve top YouTube search results with detailed metadata
+- **JSON Response Format**: Clean, well-structured output for easy integration
+- **Serverless Architecture**: Leverages Vercel for reliable, scalable deployment
+- **Low Latency**: Optimized for quick response times
+- **Cross-Platform Compatible**: RESTful API design works with any platform or language
 
-A lightweight API built with Python and yt-dlp to perform YouTube searches. The API fetches search results based on a query string and returns relevant video details like titles, channels, thumbnails, and video IDs. Deployed on Vercel for scalability and ease of use.
+## 📚 API Documentation
 
+### Base URL
+```
+https://ytsearch-three.vercel.app
+```
 
----
+### Endpoints
 
-Features
-
-🔍 Search YouTube Videos: Get top search results from YouTube for any query.
-
-📦 JSON Response: Cleanly structured output with video metadata.
-
-⚡ Serverless Deployment: Hosted on Vercel for fast, scalable, and serverless operation.
-
-💻 Easy Integration: RESTful API suitable for various applications like video search, recommendations, or streaming.
-
-
-
----
-
-API Usage
-
-Endpoint
-
+#### Search Videos
+```http
 GET /search
+```
 
-Query Parameters
+##### Query Parameters
+| Parameter | Type   | Required | Description                                      |
+|-----------|--------|----------|--------------------------------------------------|
+| query     | string | Yes      | Search term for YouTube videos                   |
+| limit     | number | No       | Maximum number of results (default: 10, max: 50) |
 
-Example Request
+##### Example Request
+```http
+GET https://ytsearch-three.vercel.app/search?query=blue&limit=2
+```
 
-GET https://ytsearch-three.vercel.app/search?query=blue
-
-Response Format
-
+##### Response Format
+```json
 {
   "success": true,
   "results": [
@@ -45,108 +44,107 @@ Response Format
       "title": "yung kai - blue (Official Music Video)",
       "channel": "yung kai",
       "video_id": "IpFX2vq8HKw",
-      "thumbnail": "https://img.youtube.com/vi/IpFX2vq8HKw/hqdefault.jpg"
-    },
-    ...
+      "thumbnail": "https://img.youtube.com/vi/IpFX2vq8HKw/hqdefault.jpg",
+      "duration": "3:42",
+      "views": "1.2M",
+      "published": "2023-12-15"
+    }
   ]
 }
+```
 
+## 🚀 Getting Started
 
----
+### Prerequisites
+- Python 3.9 or higher
+- pip (Python package manager)
+- Node.js and npm (for Vercel CLI)
 
-Local Development
+### Local Development
 
-Getting Started
-
-1. Clone the Repository
-
-git clone <your-repo-url>
-cd <project-directory>
-
-
-2. Install Dependencies
-
-pip install yt-dlp
-pip install -r requirements.txt
-
-
-3. Run the Development Server
-
-vercel dev
+1. **Clone the Repository**
+   ```bash
+   git clone <your-repo-url>
+   cd youtube-search-api
+   ```
 
 
 
-
----
-
-Deployment on Vercel
-
-Deploy in Minutes
-
-1. Install Vercel CLI
-
-npm install -g vercel
-
-
-2. Deploy to Vercel
-
-vercel
-
-
-3. Your API will be available at:
-
-https://<your-vercel-project>.vercel.app/search
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 
 
+3. **Run Development Server**
+   ```bash
+   vercel dev
+   ```
 
----
+## 📦 Deployment
 
-Response Details
+### Deploying to Vercel
 
-Each result contains the following details:
+1. **Install Vercel CLI**
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Configure Vercel Project**
+   ```bash
+   vercel login
+   vercel link
+   ```
+
+3. **Deploy**
+   ```bash
+   vercel --prod
+   ```
+
+## ⚡ Response Details
+
+Each video result includes:
+- `title`: Video title
+- `channel`: Channel name
+- `video_id`: Unique YouTube video identifier
+- `thumbnail`: High-quality thumbnail URL
+- `duration`: Video length
+- `views`: View count
+- `published`: Publication date
+
+## 🛠️ Error Handling
+
+| Status Code | Description                                    |
+|-------------|------------------------------------------------|
+| 200         | Successful request                             |
+| 400         | Bad request (invalid parameters)               |
+| 429         | Rate limit exceeded                           |
+| 500         | Internal server error                         |
+
+Error Response Format:
+```json
+{
+  "success": false,
+  "error": "Error message description"
+}
+```
 
 
----
+## 📄 License
 
-Dependencies
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Python 3.9+
+## ⚠️ Disclaimer
 
-yt-dlp
+This project is not affiliated with, endorsed by, or sponsored by YouTube or Google. Users must ensure compliance with YouTube's Terms of Service when using this API.
 
-Vercel Python Runtime
+## 📮 Support
 
-
-
----
-
-Error Handling
-
-The API returns appropriate HTTP status codes:
-
-
----
-
-Contributing
-
-We welcome contributions! Submit issues or pull requests to enhance functionality or fix bugs.
-
-
----
-
-License
-
-This project is licensed under the MIT License.
-
-
----
-
-Disclaimer
-
-This project is not affiliated with YouTube or Google. Use this tool responsibly and ensure compliance with YouTube’s terms of service.
-
+For issues, feature requests, or questions:
+- Open an issue in the GitHub repository
+  
 
 ---
 
-Let me know if you need help with code snippets or additional details!
+Made with ❤️ 
